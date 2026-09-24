@@ -1,245 +1,308 @@
-                ```html
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokengama Global Partners (LGP) | Agent Commercial Exclusif & Clinique Juridique</title>
+    <title>LOKENGAMA GLOBAL PARTNERS | Clinique Juridique d'Assistance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --couleur-primaire: #0b2345;
-            --couleur-secondaire: #134074;
-            --couleur-accentuation: #8da9c4;
-            --whatsapp-color: #25d366;
-            --couleur-texte: #333333;
-            --blanc: #ffffff;
+            --primary-blue: #003366;
+            --gold: #c5a059;
+            --light-bg: #f4f7f6;
+            --text-dark: #333;
+            --white: #ffffff;
+            --whatsapp-green: #25D366;
         }
-        * {
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            color: var(--couleur-texte);
-            background-color: #f8f9fa;
             line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
         }
+
         header {
-            background-color: var(--couleur-primaire);
-            color: var(--blanc);
-            padding: 1rem 2rem;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .logo-container h1 {
+
+        .logo h1 {
+            margin: 0;
             font-size: 1.5rem;
             letter-spacing: 1px;
         }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: var(--blanc);
+
+        nav a {
+            color: var(--white);
             text-decoration: none;
-            font-weight: 600;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
+        nav a:hover { color: var(--gold); }
+
         .hero {
-            background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(19, 64, 116, 0.85)), url('1000960133.jpg') center/cover no-repeat;
-            color: var(--blanc);
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('images/hero-bg.jpg') center/cover;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 6rem 2rem;
+            color: var(--white);
+            padding: 40px 20px;
         }
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+
+        .hero h2 { font-size: 2.8rem; margin-bottom: 15px; }
+
+        .whatsapp-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 25px;
         }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
+
+        .btn-wa {
+            background: var(--whatsapp-green);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+            font-size: 0.9rem;
         }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--couleur-primaire);
-            margin: 3rem 0 1.5rem 0;
+
+        .btn-wa:hover { transform: scale(1.05); }
+
+        .section { padding: 60px 5%; }
+
+        .section-title { text-align: center; margin-bottom: 40px; }
+
+        .section-title h2 {
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
         }
-        .gallery-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+
+        .section-title h2::after {
+            content: ''; width: 60px; height: 3px; background: var(--gold);
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+        }
+
+        .legal-clinic {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .legal-info h3 { color: var(--primary-blue); border-left: 4px solid var(--gold); padding-left: 15px; }
+
+        .pricing-card {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .price { font-size: 2rem; font-weight: bold; color: var(--gold); }
+
+        .promo {
+            background: var(--gold); color: var(--primary-blue);
+            padding: 5px 15px; border-radius: 20px; font-weight: bold;
+            display: inline-block; margin-top: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        .gallery-item {
-            background: var(--blanc);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-            padding-bottom: 1rem;
+
+        .service-card {
+            background: var(--white); padding: 25px; border-radius: 8px;
+            text-align: center; transition: transform 0.3s;
         }
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+
+        .service-card:hover { transform: translateY(-5px); }
+
+        .service-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+
+        footer { background-color: #1a1a1a; color: #ccc; padding: 50px 5% 20px; }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
         }
-        .gallery-item p {
-            padding: 1rem;
-            font-weight: 600;
-            color: var(--couleur-primaire);
+
+        .footer-col h4 { color: var(--white); margin-bottom: 20px; }
+
+        .social-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+
+        .social-links a {
+            background: #333; color: var(--white);
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: background 0.3s;
         }
-        .info-section {
-            max-width: 900px;
-            margin: 3rem auto;
-            background: var(--blanc);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .info-section h3 {
-            color: var(--couleur-primaire);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        .info-section p, .info-section ul {
-            margin-bottom: 1rem;
-        }
-        .info-section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .whatsapp-btn {
-            display: inline-block;
-            background-color: var(--whatsapp-color);
-            color: var(--blanc);
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        .submit-btn {
-            background-color: var(--couleur-primaire);
-            color: var(--blanc);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        footer {
-            background-color: var(--couleur-primaire);
-            color: var(--blanc);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+
+        .social-links a:hover { background: var(--gold); }
+
+        .legal-ids { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .legal-clinic { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <h1>LOKENGAMA GLOBAL PARTNERS</h1>
-        </div>
-        <nav>
+<header>
+    <div class="logo">
+        <h1>LOKENGAMA GLOBAL PARTNERS</h1>
+    </div>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#juridique">Juridique</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="accueil">
+    <h2>Votre Partenaire Stratégique en RDC & Afrique</h2>
+    <p>Expertise multisectorielle : Droit, Énergie Solaire, Mines, Logistique et Traitement de l'Eau.</p>
+    
+    <div class="whatsapp-buttons">
+        <a href="https://wa.me/243813254158" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> RDC (+243)
+        </a>
+        <a href="https://wa.me/256756164073" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> Ouganda (+256)
+        </a>
+        <a href="https://wa.me/242053542862" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> Congo (+242)
+        </a>
+    </div>
+</section>
+
+<section class="section" id="juridique">
+    <div class="section-title">
+        <h2>Clinique Juridique d'Assistance</h2>
+    </div>
+    <div class="legal-clinic">
+        <div class="legal-info">
+            <h3>Assistance de Proximité</h3>
+            <p>Sous la direction de <strong>Maître Blaise LOKENGAMA NGONGO</strong>.</p>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#galerie">Expertise</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><strong>Domaines :</strong> Famille, Foncier, Commercial, Pénal.</li>
+                <li><strong>Langues :</strong> Français, Swahili, Lingala.</li>
+                <li><strong>Engagement :</strong> Droits expliqués en 10 minutes.</li>
             </ul>
-        </nav>
-    </header>
+            <p>
+                <a href="https://vm.tiktok.com/ZS9ACp61B1EkL-Hc7lE/" style="color: var(--primary-blue); text-decoration: none; font-weight: bold;">
+                    <i class="fab fa-tiktok"></i> Suivez "1 Min Droit" sur TikTok
+                </a>
+            </p>
+        </div>
+        <div class="pricing-card">
+            <h4>Consultation Juridique</h4>
+            <div class="price">5 000 FC / 2$</div>
+            <div class="promo">1ère Question WhatsApp GRATUITE</div>
+            <p style="margin-top: 20px; font-size: 0.9rem;">Disponible partout en RDC</p>
+        </div>
+    </div>
+</section>
 
-    <section class="hero">
-        <h2>Une vision globale, une action multisectorielle</h2>
-        <p>Agent Commercial Exclusif & Facilitateur de Marché. Votre succès est notre priorité en RDC et à l'international.</p>
-    </section>
+<section class="section" id="services" style="background: #eef2f1;">
+    <div class="section-title">
+        <h2>Nos Pôles d'Expertise</h2>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-solar-panel"></i>
+            <h3>Énergie Solaire</h3>
+            <p>Installations SunSynk, Victron et batteries Lithium.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-water"></i>
+            <h3>Traitement de l'Eau</h3>
+            <p>Systèmes CETIL et emballage Mingstar.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-gem"></i>
+            <h3>Mines & Or</h3>
+            <p>Facilitation, achat et exportation d'or (pépites/lingots).</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-truck-moving"></i>
+            <h3>Logistique</h3>
+            <p>Vente d'engins SANY et transport international.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="galerie">
-        <h2 class="section-title">Nos Domaines d'Expertise</h2>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="1000732152.jpg" alt="Énergie solaire">
-                <p>Énergie Solaire & Renouvelables</p>
-            </div>
-            <div class="gallery-item">
-                <img src="1000732153.jpg" alt="Traitement d'eau">
-                <p>Stations de Traitement d'Eau</p>
-            </div>
-            <div class="gallery-item">
-                <img src="1000762766.jpg" alt="Exploitation minière">
-                <p>Exploitation Minière & Vente d'Or</p>
-            </div>
-            <div class="gallery-item">
-                <img src="1000960133.jpg" alt="Facilitation B2B">
-                <p>Facilitation de Marché & Solutions B2B</p>
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Nos Sièges</h4>
+            <p><strong>Bunia :</strong> 062-Mbandaka-Bankoko-Mbunya</p>
+            <p><strong>Kinshasa :</strong> Avenue Ilingi n°06, Limete</p>
+            <p><strong>Kisangani :</strong> Avenue Bini n°01, Makiso</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact & WhatsApp</h4>
+            <p><i class="fas fa-phone"></i> +243 813 254 158 (RDC)</p>
+            <p><i class="fas fa-phone"></i> +256 756 164 073 (Ouganda)</p>
+            <p><i class="fas fa-phone"></i> +242 05 354 2862 (Congo)</p>
+            <p><i class="fas fa-envelope"></i> lokengamaglobalpartners@gmail.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>Réseaux Sociaux</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/4blaisengongo" title="Profil Principal"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61587915241957" title="Clinique Juridique"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61573424327531" title="Partenaires Mondiaux"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="https://vm.tiktok.com/ZS9ACp61B1EkL-Hc7lE/" title="TikTok Juridique"><i class="fab fa-tiktok"></i></a>
+                <a href="https://vm.tiktok.com/ZS9ACs1RmXFpk-nY4Pj/" title="TikTok LGP"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@lokengamaglobalpartners" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-    </section>
-
-    <section class="info-section">
-        <h3>Identifiants Légaux & Conformité</h3>
-        <p>LOKENGAMA GLOBAL PARTNERS (LGP) respecte les normes réglementaires de la RDC :</p>
-        <ul>
-            <li><strong>RCCM :</strong> CD/RCCM/24-A-13201010401</li>
-            <li><strong>N° Impôt :</strong> A2433556B</li>
-            <li><strong>IDN :</strong> 07-G-4701-N63755J</li>
-        </ul>
-    </section>
-
-    <section class="info-section">
-        <h3>Clinique Juridique d'Assistance</h3>
-        <p>Service de proximité : écoute, confidentialité et solutions adaptées.</p>
-        <ul>
-            <li><strong>Consultation :</strong> 5 000 FC / 2$ (1ère question WhatsApp GRATUITE)</li>
-            <li><strong>Délai :</strong> Vos droits expliqués en 10 minutes</li>
-            <li><strong>Langues :</strong> Français, Swahili, Lingala</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="info-section">
-        <h3 style="text-align: center;">Nos Adresses & Contacts</h3>
-        <p style="text-align: center;"><strong>Email :</strong> lokengamaglobalpartners@gmail.com</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 2rem;">
-            <div>
-                <p><strong>Siège Social (Bunia) :</strong><br>062-Mbandaka-Bankoko-Mbunya, RDC</p>
-                <p><strong>Kisangani :</strong><br>Avenue Bini n°01, Commune Makiso</p>
-            </div>
-            <div>
-                <p><strong>Kinshasa :</strong><br>Avenue Ilingi n°06, Kingabwa (réf. Leza)</p>
-                <p><strong>Kampala :</strong><br>Ouganda</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <p><strong>Suivez-nous sur Facebook :</strong></p>
-            <a href="https://www.facebook.com/4blaisengongo" target="_blank" style="text-decoration:none; color:var(--couleur-secondaire); font-weight:bold;">Page Officielle Blaise Ngongo</a>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="https://wa.me/243813254158" target="_blank" class="whatsapp-btn">💬 WhatsApp RDC</a>
-            <a href="https://wa.me/256756164073" target="_blank" class="whatsapp-btn">💬 WhatsApp Ouganda</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 PARTENAIRES MONDIAUX DE LOKENGAMA. Tous droits réservés.</p>
-        <p>Expertise garantie • Excellence • Fiabilité</p>
-    </footer>
+    </div>
+    <div class="legal-ids">
+        <p>RCCM : CD/RCCM/24-A-13201010401 | N° IMPÔT : A2433556B | IDN : 07-G-4701-N63755J</p>
+        <p>&copy; 2024 LOKENGAMA GLOBAL PARTNERS. Tous droits réservés.</p>
+    </div>
+</footer>
 
 </body>
 </html>
 ```
-
