@@ -6,11 +6,12 @@
     <title id="page-title">Lokengama Global Partners - Solutions Globales d'Investissement et Multisectorielles</title>
     <style>
         :root {
-            --primary-color: #003366;
-            --accent-color: #f39c12;
+            --primary-color: #0A2E50; /* Bleu marine LGP */
+            --accent-color: #DAA520;  /* Or LGP */
             --text-color: #333333;
             --bg-light: #f9f9f9;
             --white: #ffffff;
+            --whatsapp-green: #25d366;
         }
 
         * {
@@ -26,52 +27,110 @@
             line-height: 1.6;
         }
 
-        /* Barre supérieure pour le choix de la langue */
-        .top-bar {
-            background-color: #002244;
-            padding: 0.5rem 1rem;
+        /* --- NAVIGATION LGP --- */
+        .lgp-navbar {
+            background-color: var(--primary-color);
+            padding: 15px 20px;
             display: flex;
-            justify-content: flex-end;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lgp-logo-area {
+            display: flex;
+            flex-direction: column;
+            color: var(--white);
+            max-width: 140px;
+        }
+
+        .lgp-logo-main {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .lgp-logo-sub {
+            font-size: 0.65rem;
+            font-weight: 600;
+            opacity: 0.8;
+            line-height: 1.2;
+            margin-top: 4px;
+        }
+
+        .lgp-nav-links {
+            display: flex;
+            gap: 15px;
             align-items: center;
         }
 
+        .lgp-nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .lgp-nav-links a:hover {
+            color: var(--accent-color);
+        }
+
         .lang-switch-btn {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            border: none;
-            padding: 0.4rem 0.8rem;
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 0.3rem 0.6rem;
             border-radius: 4px;
+            font-size: 0.8rem;
             font-weight: bold;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background 0.2s;
         }
 
         .lang-switch-btn:hover {
-            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
         }
 
-        header {
+        /* --- HERO BANNER --- */
+        .lgp-hero {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 2rem 1rem;
             text-align: center;
+            padding: 80px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 65vh;
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
+        .lgp-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.3;
+            max-width: 600px;
+            margin-bottom: 40px;
         }
 
-        header p {
+        .lgp-hero p {
             font-size: 1.1rem;
-            color: var(--accent-color);
-            font-weight: 600;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 500px;
+            line-height: 1.5;
         }
 
+        /* --- CONTENU --- */
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
         }
 
         .section-title {
@@ -85,24 +144,26 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 60px;
             height: 4px;
             background-color: var(--accent-color);
             margin: 0.5rem auto 0;
             border-radius: 2px;
         }
 
+        /* --- GRILLE SERVICES --- */
         .grid-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         .service-card {
             background: var(--white);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -110,25 +171,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
         .card-image-container {
             width: 100%;
-            height: 220px;
+            height: 180px;
             overflow: hidden;
-            position: relative;
         }
 
         .card-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .service-card:hover .card-image-container img {
-            transform: scale(1.05);
         }
 
         .card-content {
@@ -140,13 +195,13 @@
 
         .card-content h3 {
             color: var(--primary-color);
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             margin-bottom: 0.8rem;
         }
 
         .card-content p {
             font-size: 0.95rem;
-            color: #666;
+            color: #555;
             margin-bottom: 1.2rem;
             flex-grow: 1;
         }
@@ -168,230 +223,145 @@
             color: var(--primary-color);
         }
 
+        /* --- CONTACT SECTIONS --- */
+        .contact-section {
+            background-color: #f0f4f8;
+            padding: 60px 20px;
+        }
+
+        .contact-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .contact-box {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .contact-box.box-wa { border-left: 5px solid var(--whatsapp-green); }
+        .contact-box.box-mail { border-left: 5px solid var(--primary-color); }
+
+        .contact-box p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .contact-link {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-link.wa-color { color: var(--whatsapp-green); }
+        .contact-link.mail-color { color: var(--primary-color); }
+        .contact-link:hover { text-decoration: underline; }
+
+        .contact-box svg { width: 24px; height: 24px; }
+        .contact-box.box-wa svg { fill: var(--whatsapp-green); }
+        .contact-box.box-mail svg { fill: var(--primary-color); }
+
+        .contact-form-container {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            margin-top: 20px;
+        }
+
+        .form-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background-color: #e2e8f0;
+            color: var(--text-color);
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary-color); }
+
+        .btn-send {
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-send:hover { opacity: 0.9; }
+        .btn-send.bg-wa { background: var(--whatsapp-green); }
+        .btn-send.bg-mail { background: var(--primary-color); }
+        .btn-send svg { width: 20px; height: 20px; fill: white; }
+
+        .hidden-form { display: none; }
+
+        /* --- FOOTER & RESEAUX SOCIAUX --- */
         footer {
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
+            padding: 3rem 1rem;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
+        footer p { margin-bottom: 10px; }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
         }
-    </style>
-</head>
-<body>
 
-    <!-- Barre de changement de langue -->
-    <div class="top-bar">
-        <button id="langToggleBtn" class="lang-switch-btn" onclick="toggleLanguage()">Switch to English</button>
-    </div>
-
-    <header>
-        <h1 data-fr="LOKENGAMA GLOBAL PARTNERS" data-en="LOKENGAMA GLOBAL PARTNERS">LOKENGAMA GLOBAL PARTNERS</h1>
-        <p data-fr="Global Investment and Multisector Solutions — Votre partenaire de confiance de la Chine à Bunia et à l'international" 
-           data-en="Global Investment and Multisector Solutions — Your trusted partner from China to Bunia and internationally">
-           Global Investment and Multisector Solutions — Votre partenaire de confiance de la Chine à Bunia et à l'international
-        </p>
-    </header>
-
-    <div class="container">
-        <h2 class="section-title" data-fr="Nos Domaines d'Intervention" data-en="Our Areas of Expertise">Nos Domaines d'Intervention</h2>
-
-        <div class="grid-services">
-            
-            <!-- 1 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000961236.jpg" alt="Solar panels">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Énergies Renouvelables & Solaire" data-en="Renewable Energy & Solar">Énergies Renouvelables & Solaire</h3>
-                    <p data-fr="Installation professionnelle de kits solaires, de systèmes d'éclairage public autonomes et solutions énergétiques durables." 
-                       data-en="Professional installation of solar kits, autonomous public lighting systems, and sustainable energy solutions.">
-                       Installation professionnelle de kits solaires, de systèmes d'éclairage public autonomes et solutions énergétiques durables.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 2 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000961238.jpg" alt="Maintenance">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Maintenance & Infrastructures" data-en="Maintenance & Infrastructure">Maintenance & Infrastructures</h3>
-                    <p data-fr="Suivi technique spécialisé, montage et maintenance d'équipements énergétiques en hauteur et sur toiture." 
-                       data-en="Specialized technical monitoring, assembly, and maintenance of high-altitude and rooftop energy equipment.">
-                       Suivi technique spécialisé, montage et maintenance d'équipements énergétiques en hauteur et sur toiture.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 3 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000961233.jpg" alt="Solar street light">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Éclairage Public & Mâts Solaires" data-en="Public Lighting & Solar Masts">Éclairage Public & Mâts Solaires</h3>
-                    <p data-fr="Fourniture et pose de solutions d'éclairage urbain et périphérique alimentées par l'énergie solaire." 
-                       data-en="Supply and installation of solar-powered urban and peripheral lighting solutions.">
-                       Fourniture et pose de solutions d'éclairage urbain et périphérique alimentées par l'énergie solaire.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000960293.jpg" alt="Telecom">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Télécommunications & Sécurité" data-en="Telecommunications & Security">Télécommunications & Sécurité</h3>
-                    <p data-fr="Intervention sur les sites industriels, sécurisation des périmètres et installation d'équipements de surveillance." 
-                       data-en="Intervention on industrial sites, perimeter security, and installation of surveillance equipment.">
-                       Intervention sur les sites industriels, sécurisation des périmètres et installation d'équipements de surveillance.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 5 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000671883.jpg" alt="Mining">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Mines & Métaux Précieux" data-en="Mining & Precious Metals">Mines & Métaux Précieux</h3>
-                    <p data-fr="Expertise, sourcing et accompagnement dans le secteur minier, de la prospection jusqu'à la valorisation." 
-                       data-en="Expertise, sourcing, and support in the mining sector, from prospecting to enhancement.">
-                       Expertise, sourcing et accompagnement dans le secteur minier, de la prospection jusqu'à la valorisation.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 6 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000671882.jpg" alt="Weighing">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Pesage & Métrologie Minière" data-en="Weighing & Mining Metrology">Pesage & Métrologie Minière</h3>
-                    <p data-fr="Utilisation d'instruments de mesure et de balances de haute précision pour le contrôle et la traçabilité." 
-                       data-en="Use of high-precision measuring instruments and scales for control and traceability.">
-                       Utilisation d'instruments de mesure et de balances de haute précision pour le contrôle et la traçabilité.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 7 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000678205.jpg" alt="Gold">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Commercialisation d'Or" data-en="Gold Trading">Commercialisation d'Or</h3>
-                    <p data-fr="Transactions sécurisées et filières formelles pour la commercialisation de lingots d'or aux normes internationales." 
-                       data-en="Secure transactions and formal channels for the commercialization of gold bars meeting international standards.">
-                       Transactions sécurisées et filières formelles pour la commercialisation de lingots d'or aux normes internationales.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 8 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000815967.jpg" alt="Vehicles">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Importation de Véhicules & Logistique" data-en="Vehicle Import & Logistics">Importation de Véhicules & Logistique</h3>
-                    <p data-fr="Importation de véhicules multi-marques depuis le Japon, l'Europe, la Chine et Dubai avec Africa Response." 
-                       data-en="Multi-brand vehicle importation from Japan, Europe, China, and Dubai with Africa Response.">
-                       Importation de véhicules multi-marques depuis le Japon, l'Europe, la Chine et Dubai avec Africa Response.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 9 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000815968.jpg" alt="Freight">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Fret Multimodal & Pétroliers" data-en="Multimodal Freight & Petroleum">Fret Multimodal & Pétroliers</h3>
-                    <p data-fr="Gestion logistique lourde, manutention de conteneurs, fret en gros et distribution de produits pétroliers." 
-                       data-en="Heavy logistics management, container handling, bulk freight, and petroleum product distribution.">
-                       Gestion logistique lourde, manutention de conteneurs, fret en gros et distribution de produits pétroliers.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- 10 -->
-            <div class="service-card">
-                <div class="card-image-container">
-                    <img src="1000815975.jpg" alt="Water purification">
-                </div>
-                <div class="card-content">
-                    <h3 data-fr="Traitement & Purification d'Eau" data-en="Water Treatment & Purification">Traitement & Purification d'Eau</h3>
-                    <p data-fr="Fourniture et installation d'unités industrielles de filtration et de purification d'eau pour usines et communautés." 
-                       data-en="Supply and installation of industrial water filtration and purification units for factories and communities.">
-                       Fourniture et installation d'unités industrielles de filtration et de purification d'eau pour usines et communautés.
-                    </p>
-                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer id="contact">
-        <p><strong>LOKENGAMA GLOBAL PARTNERS</strong></p>
-        <p data-fr="Contacts : +243 812 4588 / +243 831 08820 / +43 995 880665 / +256 756 18796" 
-           data-en="Contacts: +243 812 4588 / +243 831 08820 / +43 995 880665 / +256 756 18796">
-           Contacts : +243 812 4588 / +243 831 08820 / +43 995 880665 / +256 756 18796
-        </p>
-        <p>Email : lokengamaglobalers@gmail.com</p>
-        <p data-fr="&copy; 2026 - Tous droits réservés." data-en="&copy; 2026 - All rights reserved.">&copy; 2026 - Tous droits réservés.</p>
-    </footer>
-
-    <!-- Script JavaScript pour basculer dynamiquement les langues -->
-    <script>
-        let currentLang = 'fr';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            
-            // Changer l'attribut lang de la balise html
-            document.getElementById('html-root').setAttribute('lang', currentLang);
-
-            // Changer le texte du bouton
-            const btn = document.getElementById('langToggleBtn');
-            if (currentLang === 'en') {
-                btn.textContent = 'Passer en Français';
-            } else {
-                btn.textContent = 'Switch to English';
-            }
-
-            // Mettre à jour tous les éléments possédant les attributs data-fr et data-en
-            const elements = document.querySelectorAll('[data-fr]');
-            elements.forEach(el => {
-                if (currentLang === 'en') {
-                    el.innerHTML = el.getAttribute('data-en');
-                } else {
-                    el.innerHTML = el.getAttribute('data-fr');
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
