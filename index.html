@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokengama Global Partners - Solutions Globales d'Investissement et Multisectorielles</title>
+    <title id="page-title">Lokengama Global Partners - Solutions Globales d'Investissement et Multisectorielles</title>
     <style>
         :root {
             --primary-color: #003366;
@@ -25,6 +24,30 @@
             color: var(--text-color);
             background-color: var(--bg-light);
             line-height: 1.6;
+        }
+
+        /* Barre supérieure pour le choix de la langue */
+        .top-bar {
+            background-color: #002244;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .lang-switch-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .lang-switch-btn:hover {
+            opacity: 0.85;
         }
 
         header {
@@ -86,7 +109,7 @@
         }
 
         .service-card:hover {
-            transform: translateY(-55px);
+            transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
@@ -160,5 +183,215 @@
 </head>
 <body>
 
+    <!-- Barre de changement de langue -->
+    <div class="top-bar">
+        <button id="langToggleBtn" class="lang-switch-btn" onclick="toggleLanguage()">Switch to English</button>
+    </div>
+
     <header>
-        <
+        <h1 data-fr="LOKENGAMA GLOBAL PARTNERS" data-en="LOKENGAMA GLOBAL PARTNERS">LOKENGAMA GLOBAL PARTNERS</h1>
+        <p data-fr="Global Investment and Multisector Solutions — Votre partenaire de confiance de la Chine à Bunia et à l'international" 
+           data-en="Global Investment and Multisector Solutions — Your trusted partner from China to Bunia and internationally">
+           Global Investment and Multisector Solutions — Votre partenaire de confiance de la Chine à Bunia et à l'international
+        </p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title" data-fr="Nos Domaines d'Intervention" data-en="Our Areas of Expertise">Nos Domaines d'Intervention</h2>
+
+        <div class="grid-services">
+            
+            <!-- 1 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000961236.jpg" alt="Solar panels">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Énergies Renouvelables & Solaire" data-en="Renewable Energy & Solar">Énergies Renouvelables & Solaire</h3>
+                    <p data-fr="Installation professionnelle de kits solaires, de systèmes d'éclairage public autonomes et solutions énergétiques durables." 
+                       data-en="Professional installation of solar kits, autonomous public lighting systems, and sustainable energy solutions.">
+                       Installation professionnelle de kits solaires, de systèmes d'éclairage public autonomes et solutions énergétiques durables.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000961238.jpg" alt="Maintenance">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Maintenance & Infrastructures" data-en="Maintenance & Infrastructure">Maintenance & Infrastructures</h3>
+                    <p data-fr="Suivi technique spécialisé, montage et maintenance d'équipements énergétiques en hauteur et sur toiture." 
+                       data-en="Specialized technical monitoring, assembly, and maintenance of high-altitude and rooftop energy equipment.">
+                       Suivi technique spécialisé, montage et maintenance d'équipements énergétiques en hauteur et sur toiture.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000961233.jpg" alt="Solar street light">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Éclairage Public & Mâts Solaires" data-en="Public Lighting & Solar Masts">Éclairage Public & Mâts Solaires</h3>
+                    <p data-fr="Fourniture et pose de solutions d'éclairage urbain et périphérique alimentées par l'énergie solaire." 
+                       data-en="Supply and installation of solar-powered urban and peripheral lighting solutions.">
+                       Fourniture et pose de solutions d'éclairage urbain et périphérique alimentées par l'énergie solaire.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000960293.jpg" alt="Telecom">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Télécommunications & Sécurité" data-en="Telecommunications & Security">Télécommunications & Sécurité</h3>
+                    <p data-fr="Intervention sur les sites industriels, sécurisation des périmètres et installation d'équipements de surveillance." 
+                       data-en="Intervention on industrial sites, perimeter security, and installation of surveillance equipment.">
+                       Intervention sur les sites industriels, sécurisation des périmètres et installation d'équipements de surveillance.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000671883.jpg" alt="Mining">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Mines & Métaux Précieux" data-en="Mining & Precious Metals">Mines & Métaux Précieux</h3>
+                    <p data-fr="Expertise, sourcing et accompagnement dans le secteur minier, de la prospection jusqu'à la valorisation." 
+                       data-en="Expertise, sourcing, and support in the mining sector, from prospecting to enhancement.">
+                       Expertise, sourcing et accompagnement dans le secteur minier, de la prospection jusqu'à la valorisation.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000671882.jpg" alt="Weighing">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Pesage & Métrologie Minière" data-en="Weighing & Mining Metrology">Pesage & Métrologie Minière</h3>
+                    <p data-fr="Utilisation d'instruments de mesure et de balances de haute précision pour le contrôle et la traçabilité." 
+                       data-en="Use of high-precision measuring instruments and scales for control and traceability.">
+                       Utilisation d'instruments de mesure et de balances de haute précision pour le contrôle et la traçabilité.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000678205.jpg" alt="Gold">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Commercialisation d'Or" data-en="Gold Trading">Commercialisation d'Or</h3>
+                    <p data-fr="Transactions sécurisées et filières formelles pour la commercialisation de lingots d'or aux normes internationales." 
+                       data-en="Secure transactions and formal channels for the commercialization of gold bars meeting international standards.">
+                       Transactions sécurisées et filières formelles pour la commercialisation de lingots d'or aux normes internationales.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000815967.jpg" alt="Vehicles">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Importation de Véhicules & Logistique" data-en="Vehicle Import & Logistics">Importation de Véhicules & Logistique</h3>
+                    <p data-fr="Importation de véhicules multi-marques depuis le Japon, l'Europe, la Chine et Dubai avec Africa Response." 
+                       data-en="Multi-brand vehicle importation from Japan, Europe, China, and Dubai with Africa Response.">
+                       Importation de véhicules multi-marques depuis le Japon, l'Europe, la Chine et Dubai avec Africa Response.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000815968.jpg" alt="Freight">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Fret Multimodal & Pétroliers" data-en="Multimodal Freight & Petroleum">Fret Multimodal & Pétroliers</h3>
+                    <p data-fr="Gestion logistique lourde, manutention de conteneurs, fret en gros et distribution de produits pétroliers." 
+                       data-en="Heavy logistics management, container handling, bulk freight, and petroleum product distribution.">
+                       Gestion logistique lourde, manutention de conteneurs, fret en gros et distribution de produits pétroliers.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="service-card">
+                <div class="card-image-container">
+                    <img src="1000815975.jpg" alt="Water purification">
+                </div>
+                <div class="card-content">
+                    <h3 data-fr="Traitement & Purification d'Eau" data-en="Water Treatment & Purification">Traitement & Purification d'Eau</h3>
+                    <p data-fr="Fourniture et installation d'unités industrielles de filtration et de purification d'eau pour usines et communautés." 
+                       data-en="Supply and installation of industrial water filtration and purification units for factories and communities.">
+                       Fourniture et installation d'unités industrielles de filtration et de purification d'eau pour usines et communautés.
+                    </p>
+                    <a href="#contact" class="btn-details" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="contact">
+        <p><strong>LOKENGAMA GLOBAL PARTNERS</strong></p>
+        <p data-fr="Contacts : +243 812 4588 / +243 831 08820 / +43 995 880665 / +256 756 18796" 
+           data-en="Contacts: +243 812 4588 / +243 831 08820 / +43 995 880665 / +256 756 18796">
+           Contacts : +243 812 4588 / +243 831 08820 / +43 995 880665 / +256 756 18796
+        </p>
+        <p>Email : lokengamaglobalers@gmail.com</p>
+        <p data-fr="&copy; 2026 - Tous droits réservés." data-en="&copy; 2026 - All rights reserved.">&copy; 2026 - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script JavaScript pour basculer dynamiquement les langues -->
+    <script>
+        let currentLang = 'fr';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            
+            // Changer l'attribut lang de la balise html
+            document.getElementById('html-root').setAttribute('lang', currentLang);
+
+            // Changer le texte du bouton
+            const btn = document.getElementById('langToggleBtn');
+            if (currentLang === 'en') {
+                btn.textContent = 'Passer en Français';
+            } else {
+                btn.textContent = 'Switch to English';
+            }
+
+            // Mettre à jour tous les éléments possédant les attributs data-fr et data-en
+            const elements = document.querySelectorAll('[data-fr]');
+            elements.forEach(el => {
+                if (currentLang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-fr');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
